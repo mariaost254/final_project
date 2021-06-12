@@ -1,0 +1,93 @@
+/******************Welcome Page*****************/
+.welcome-header{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.q-container{
+    display: block;
+    margin-top:5%;
+    width: 80%;
+    float: right;
+}
+
+.q-img{
+    margin:50px auto;
+}
+
+blockquote{
+    float: left;
+    font-size: 1em;
+    width:70%;
+    margin:50px auto;
+    font-style:italic;
+    color: #555555;
+    padding:1.2em 30px 1.2em 75px;
+    border-left:8px solid #7AB5E8 ;
+    line-height:1.6;
+    position: relative;
+    background:#EDEDED;
+  }
+  
+  blockquote::before{
+    font-family:Arial;
+    content: "\201C";
+    color:#7AB5E8;
+    font-size:6em;
+    position: absolute;
+    left: 10px;
+    top:-10px;
+  }
+  
+  blockquote::after{
+    content: '';
+  }
+  
+  blockquote span{
+    display:block;
+    color:#333333;
+    font-style: normal;
+    font-weight: bold;
+    margin-top:1em;
+  }
+
+.box{
+    position: relative;
+    display: inline-block; 
+}
+  .calc-bg {
+    width: 100%;
+    height: auto;
+    background-repeat: no-repeat;
+  }
+  
+  .calc-text {
+    position: absolute;
+        z-index: 999;
+        margin: 0 auto;
+        left: 0;
+        right: 0;        
+        text-align: center;
+        top: 40%; /* Adjust this value to move the positioned div up and down */
+        font-family: Arial,sans-serif;
+        color: #fff;
+        width: 60%; /* Set the width of the positioned div */
+  }
+  
+  .calc-text button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 10px 25px;
+    color: black;
+    background-color: #ddd;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .calc-text button:hover {
+    background-color: #27B9B6;
+    color: white;
+  }
