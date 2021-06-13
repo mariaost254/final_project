@@ -39,10 +39,10 @@ blockquote{
     font-style:italic;
     color: #555555;
     padding:1.2em 30px 1.2em 75px;
-    border-left:8px solid #7AB5E8 ;
+    /* border-left:8px solid #7AB5E8 ; */
     line-height:1.6;
     position: relative;
-    background:#EDEDED;
+    /* background:#EDEDED; */
   }
   
   blockquote::before{
@@ -93,10 +93,11 @@ blockquote{
   .calc-text button {
     border: none;
     outline: 0;
+    border-radius: 5px;
     display: inline-block;
     padding: 10px 25px;
     color: black;
-    background-color: #ddd;
+    background-color: #FFFBFE;
     text-align: center;
     cursor: pointer;
   }
