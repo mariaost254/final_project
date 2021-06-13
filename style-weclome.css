@@ -1,24 +1,38 @@
 /******************Welcome Page*****************/
+
 .welcome-header{
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    /* height: 70%; */
+    display: inline-block; /*flex center center*/
+    align-items: left;
+    justify-content: left;
+    margin-left: 10px;
 }
+
 
 .q-container{
-    display: block;
-    margin-top:5%;
-    width: 80%;
-    float: right;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:5%;
+  width: 80%;
 }
 
-.q-img{
-    margin:50px auto;
+.sticky {
+  z-index: 1;
+  background-color: #fff;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.q-container-img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top:2%;
+}
 blockquote{
-    float: left;
     font-size: 1em;
     width:70%;
     margin:50px auto;
@@ -65,12 +79,12 @@ blockquote{
   
   .calc-text {
     position: absolute;
-        z-index: 999;
+        /* z-index: 999; */
         margin: 0 auto;
         left: 0;
         right: 0;        
         text-align: center;
-        top: 40%; /* Adjust this value to move the positioned div up and down */
+        top: 30%; /* Adjust this value to move the positioned div up and down */
         font-family: Arial,sans-serif;
         color: #fff;
         width: 60%; /* Set the width of the positioned div */
