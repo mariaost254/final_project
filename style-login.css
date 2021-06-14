@@ -1,24 +1,41 @@
 body {
     margin: 0%;
     font-family: 'Open Sans'; 
-}
-
-/*THE LOGIN PAGE CSS*/
-.login_main {
     background-image: url(img/login_back.jpg);
     background-size:cover ;
-    min-height: 100vh;
-    box-shadow:inset 0 0 0 2000px rgba(217, 255, 0, 0.3);
+    background-repeat: no-repeat;
 }
 
 .col1 {
     width: 50%;
+    height: 100%;
+    
+}
+
+.form {
+  margin: 0 auto;
+  width: 50%;
 }
 
 .login {
-    height: 80vh;
-    width: 50%;
+    height: 70vh;
+    width: 40%;
     background-color: #4D9DE0;
+    padding: 2%;
+    margin: 0 auto;
+    margin-top: 12%;
+    border-radius: 8px;
+}
+
+.login-row {
+  margin: 0 auto;
+  padding: 0.2em;
+}
+
+h1 {
+  color: snow;
+  font-size: 4em;
+  text-align: center;
 }
 
 .animate-in {
