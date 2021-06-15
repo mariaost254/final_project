@@ -1,18 +1,11 @@
-h1{
-   
-    text-align: center;
-    background-color: white;
-}
+
 body{
-    margin: 0%;
-    font-family: 'open Sans';
     background-image: url(img/login_back.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
   
-
-p{
+.calcs{
     font-size: 20px;   
     background-color: #4d9de0;   
     margin-left: 20px;

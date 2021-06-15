@@ -1,13 +1,11 @@
 /******************Welcome Page*****************/
-
-.welcome-header{
-    /* height: 70%; */
-    display: inline-block; /*flex center center*/
+/*flex center center*/
+ /* .welcome-header{
+    display: inline-block; 
     align-items: left;
     justify-content: left;
     margin-left: 10px;
-}
-
+}  */
 
 .q-container{
   display: block;
@@ -17,14 +15,14 @@
   width: 80%;
 }
 
-.sticky {
+/* .sticky {
   z-index: 1;
   background-color: #fff;
   position: sticky;
   top: 0;
   width: 100%;
   box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
+} */
 
 .q-container-img{
   display: block;
@@ -67,7 +65,7 @@ blockquote{
     margin-top:1em;
   }
 
-.box{
+  .box{
     position: relative;
     display: inline-block; 
 }
@@ -79,7 +77,6 @@ blockquote{
   
   .calc-text {
     position: absolute;
-        /* z-index: 999; */
         margin: 0 auto;
         left: 0;
         right: 0;        

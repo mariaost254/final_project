@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style-main.css">
+    <link rel="stylesheet" href="style-calc.css">
+   
     <title>Hishuv</title>
 </head>
-<body>
-    
+<body onload="initUser()">
+    <div>
+        <div class="sticky">
+            <div class="welcome-header">
+                <img src="img/mini-logo2.png" alt="Main Logo Hishuv header" style="margin-top:20px"/>
+            </div>
+            <div class="welcome-header">
+                <p id="userHeader" style="color:#808080;font-style:italic;"></p> 
+            </div>
+        </div> 
+         <div class="animate-in">
+            <div class="calc-text">
+            <button onclick="window.location.href='final.html';" value="final">Show me my calculations</button>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

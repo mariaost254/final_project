@@ -4,22 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="final-css.css">
+    <link rel="stylesheet" href="style-main.css">
+    <link rel="stylesheet" href="style-final.css">
     <title>Document</title>
 </head>
-<body>
- <h1> Welcome User</h1> 
- <div id='fin_clc'> 
- <p >Here is yours calculation:
+<body onload="initUser()" >
+<div>
+    <div class="sticky">
+        <div class="welcome-header">
+            <img src="img/mini-logo2.png" alt="Main Logo Hishuv header" style="margin-top:20px"/>
+        </div>
+        <div class="welcome-header">
+            <p id="userHeader" style="color:#808080;font-style:italic;">The unlimited calculation app</p>
+        </div>
+    </div>
+
+ <div id='fin_clc' class="animate-in"> 
+          <p class="calcs">Here is yours calculation:
      <br><br>
  <a class='hisuv'>12+12=24</a>
  <br><br>
  <a class='hisuv'>13+13=26</a>
  </p>
 </div> 
- 
-
+ </div>
+<script type="text/javascript" src="main.js"></script>
     
 </body>
 </html>

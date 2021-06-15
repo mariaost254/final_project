@@ -1,6 +1,5 @@
 body {
     margin: 0%;
-    font-family: 'Open Sans'; 
     background-image: url(img/login_back.jpg);
     background-size:cover ;
     background-repeat: no-repeat;
@@ -38,7 +37,7 @@ h1 {
   text-align: center;
 }
 
-.animate-in {
+/* .animate-in {
     animation: fadeIn .5s ease-in;
   }
   
@@ -50,4 +49,4 @@ h1 {
   @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
-  }
+  } */
