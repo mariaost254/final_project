@@ -9,9 +9,10 @@
    
     <title>Welcome</title>
 </head>
-<body class="animate-in">
+<body class="animate-in" >
+  <div id="upper" ></div>
 <div>
-    <div class="sticky">
+    <div class="sticky" >
         <div class="welcome-header">
             <img src="img/mini-logo2.png" alt="Main Logo Hishuv header" style="margin-top:20px"/>
         </div>
@@ -20,30 +21,33 @@
         </div>
     </div>
     <div>
-    <div class="box">
-        <img class="calc-bg" src="img/Welcome.jpeg" alt="Welcome bg">
+    <div class="box" >
+        <img class="calc-bg" src="img/bg1.jpg" alt="Welcome bg">
         <div class="calc-text">
           <h1 style="font-size:50px">Welcome</h1>
           <p>Your calculation journey begins here </p>
           <button onclick="window.location.href='login.html';" value="Login">Begin</button>
         </div>
       </div>
-    <div class="q-container"> 
+      <div class="mid-arrow">
+        <a  href="#lower"><img class="calc-arrow" src="img/arro.ico" alt="Arrow"></a>
       </div>
+    <div class="q-container" > 
+      <div class="q-section">
            <img class="q-container-img" src="img/plus.jpg" alt="plus">
         <blockquote>
             Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.
             <span>Maria Ost 2222222111</span>
-          </blockquote>
-        </div>
+        </blockquote>
       </div>
+      <div class="q-section">
       <img class="q-container-img" src="img/div.jpg"  alt="divition">
           <blockquote>
             Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.
             <span>Maria Ost 2222222111</span>
           </blockquote>
         </div>
-      </div>
+      <div class="q-section">
       <img class="q-container-img" src="img/multi.jpg"  alt="multiplication">
           <blockquote>
             Creativity is just connecting things. When you ask creative people how they did something, they feel a little guilty because they didn't really do it, they just saw something. It seemed obvious to them after a while. That's because they were able to connect experiences they've had and synthesize new things.
@@ -51,8 +55,11 @@
           </blockquote>
         </div>
     </div>
+    <a href="#upper" >Click Me to Smooth Scroll to Section 1 Above</a>
   </div>
 </div>
+
+
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>

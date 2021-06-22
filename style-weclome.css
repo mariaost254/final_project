@@ -1,3 +1,4 @@
+
 /******************Welcome Page*****************/
 /*flex center center*/
  /* .welcome-header{
@@ -11,7 +12,7 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top:5%;
+  /* margin-top:5%; */
   width: 80%;
 }
 
@@ -69,12 +70,12 @@ blockquote{
     position: relative;
     display: inline-block; 
 }
-  .calc-bg {
+  /* .calc-bg {
     width: 100%;
     height: auto;
     background-repeat: no-repeat;
   }
-  
+   */
   .calc-text {
     position: absolute;
         margin: 0 auto;
