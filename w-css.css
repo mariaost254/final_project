@@ -126,7 +126,7 @@ section {
     color:black;
     padding-top: 40px;
     position: absolute;
-    bottom: 20px;
+    bottom: 2px;
     left: 50%;
     display: inline-block;
     transform: translate(0, -50%);
@@ -150,36 +150,74 @@ section {
     box-sizing: border-box;
   }
 
+  .q-container{
+    position: relative;
+        margin-left:10%;
+        height:auto; 
+        width:80%;
+        display: block;
+        align-items: left;
+        justify-content: left;
+  }
 
+  blockquote {
+    margin-top:2%;
+    width:60%;
+    text-align: left;
+    padding-top: 50px;
+    box-sizing: border-box;
+    position: relative;
+    display: inline-block;
+    background: #7AB5E8;
+   color: #fff;
+    padding: 40px 30px 30px 60px;
+    border-radius: 10px;
+    /* color: #333; */
+    font : normal 300 20px/1 'Josefin Sans', sans-serif;
+    box-shadow: 1px 1px 1px #999,2px 2px 1px #999,3px 3px 1px #999;
+    transition-duration: .3s;
+  }
+    
+    .author {
+      position: relative;
+      display: block;
+      text-align: right;
+      margin-top: 5px;
+      color: #274F70;
+    }
+    blockquote i {
+        position: relative;
+        background: #7AB5E8;
+        padding-left: 5px;
+        font-style: italic;
+        z-index: 1;
+      }
+      
+      .author::before {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #ccc;
+        z-index: 1;
+      }
 
-
-
-/* #lower a {
-  padding-top: 60px;
-}
-
-#lower a span {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 46px;
-  height: 46px;
-  margin-left: -23px;
-  border: 1px solid #fff;
-  border-radius: 100%;
-  box-sizing: border-box;
-}
-
-#lower a span::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  content: '';
-  width: 16px;
-  height: 16px;
-  margin: -12px 0 0 -8px;
-  border-left: 1px solid #fff;
-  border-bottom: 1px solid #fff;
-  transform: rotate(-45deg);
-  box-sizing: border-box;
-} */
+      blockquote::before {
+        display: block;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        content: "\"";
+        font-family: 'Bitter', serif;
+        font-size: 120px;
+        color: #3A76A8;
+      }
+    
+      blockquote:hover {
+      box-shadow: 1px 1px 5px #999,2px 2px 6px #999, 3px 3px 7px #999;
+    }
+  
+  
