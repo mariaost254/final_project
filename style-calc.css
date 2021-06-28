@@ -58,6 +58,12 @@ body {
   transform: scale(0.98);
 }
 
+.equal{
+   width : 295px;
+   grid-column-start: 2;
+   grid-column-end: 5;
+}
+
 .result {
   border-radius: 0.5rem;
   font-size: 30px;
@@ -66,7 +72,7 @@ body {
   min-height: 1em;
   max-height: 3em;
   grid-column-start: 1;
-  grid-column-end: -2;
+  grid-column-end: 4;
   align-items: center;
   flex-direction: row-reverse;
   display: flex;

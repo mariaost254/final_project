@@ -3,6 +3,7 @@ const numbers = document.querySelectorAll(".number");
 const equal = document.querySelector(".equal");
 const reset = document.querySelector(".reset");
 const result = document.querySelector(".result");
+const nextpage = document.querySelector(".next");
 
 let first = "";
 let second = "";
@@ -13,18 +14,43 @@ let isSecondDone = false;
 let action;
 let prevRes = "";
 
+let arrRes = [];
+
 
  function getResultOP (num1, num2){
     num1 = parseInt(num1);
     num2 = parseInt(num2);
+    //keep results as string in an array //+ ? with time stamp
      switch(action){
-         case '+': return (num1 + num2).toString();
-         case '-': return (num1 - num2).toString();
-         case '*': return (num1 * num2).toString();
-         case '/': return (num1 / num2).toString();
+         case '+': 
+         {
+            arrRes.push(num1.toString() + ' + ' + num2.toString()+ ' = ' + (num1 + num2).toString());
+            return (num1 + num2).toString();
+         }
+         case '-': 
+         {
+            arrRes.push(num1.toString() + ' - ' + num2.toString()+ ' = ' + (num1 - num2).toString());
+            return (num1 - num2).toString();
+         }
+         case '*': 
+         {
+            arrRes.push(num1.toString() + ' * ' + num2.toString()+ ' = ' + (num1 * num2).toString());
+            return (num1 * num2).toString();
+         }
+         case '/': 
+         {
+            arrRes.push(num1.toString() + ' / ' + num2.toString()+ ' = ' + (num1 / num2).toString());
+            return (num1 / num2).toString();
+         }
          default: return;
      }
 }
+
+//take the array to the local storage -> will be used in next page 
+nextpage.addEventListener("click", e =>{
+    localStorage.setItem('arrRes', JSON.stringify(arrRes));
+    window.location.href='final.html';
+})
 
 
 for ( let operation of operations){
@@ -67,7 +93,6 @@ for ( let operation of operations){
 
 
 equal.addEventListener("click", () => {
-
   if (isFirstDone && isSecondDone && prevRes=="" ) { // calc result + in a case of click on number (without operator first) reset all
     res = getResultOP(first,second);
     result.innerText = res;
@@ -78,8 +103,8 @@ equal.addEventListener("click", () => {
     result.innerText = res;
     prevRes = res;
     isFirstDone = false;
-
   }
+
 
 });
 
