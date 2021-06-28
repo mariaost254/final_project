@@ -13,32 +13,46 @@ let isFirstDone = false;
 let isSecondDone = false;
 let action;
 let prevRes = "";
-
+let isFirstChar = true;
 let arrRes = [];
+let tempAction = false;
 
 
  function getResultOP (num1, num2){
     num1 = parseInt(num1);
     num2 = parseInt(num2);
+
     //keep results as string in an array //+ ? with time stamp
      switch(action){
          case '+': 
          {
+            if (tempAction){
+                num2 = (num1 * num2) / 100;
+            }
             arrRes.push(num1.toString() + ' + ' + num2.toString()+ ' = ' + (num1 + num2).toString());
             return (num1 + num2).toString();
          }
          case '-': 
          {
+            if (tempAction){
+                num2 = (num1 * num2) / 100;
+            }
             arrRes.push(num1.toString() + ' - ' + num2.toString()+ ' = ' + (num1 - num2).toString());
             return (num1 - num2).toString();
          }
          case '*': 
          {
+            if (tempAction){
+                num2 = num2 /100;
+            }
             arrRes.push(num1.toString() + ' * ' + num2.toString()+ ' = ' + (num1 * num2).toString());
             return (num1 * num2).toString();
          }
          case '/': 
          {
+            if (tempAction){
+                num2 = num2 /100;
+            }
             arrRes.push(num1.toString() + ' / ' + num2.toString()+ ' = ' + (num1 / num2).toString());
             return (num1 / num2).toString();
          }
@@ -65,16 +79,28 @@ nextpage.addEventListener("click", e =>{
 
 for ( let operation of operations){
   operation.addEventListener("click", e => {
+    if(action && e.target.innerText== '%'){ // for calculation such as 20 - %5
+      tempAction = action;
+    }
     action = e.target.innerText;
     //keep on calculating previouse results with another number
-    if (prevRes){ 
+    if((isFirstDone && isSecondDone && tempAction) || (prevRes && isSecondDone && tempAction)){// for continuous calculation (prev result..) such as 20 - %5
+        console.log("dfgdfg");
+        action = tempAction;
+        tempAction = true;
+    }
+
+    else if (prevRes){ 
         isSecondDone = false;
         second = "";
         isFirstDone = true;
+        isFirstChar = true;
+        console.log("ad");
     }
 
     if ( !isFirstDone ) { //go to second number
         isFirstDone = true;
+        isFirstChar = true;
       }
 
 });
@@ -86,16 +112,38 @@ for ( let operation of operations){
   for ( let number of numbers){
       number.addEventListener("click", (e) =>{
         let input = e.target.innerText;
-        if(!isFirstDone){
+        
+         if (prevRes != "" && input =='±' && isSecondDone && !isFirstDone){
+            prevRes *= -1;
+            result.innerText = prevRes;
+        }
+        
+        else if(!isFirstDone){
             if(prevRes != ""){
               this.resetValues();
+              isFirstChar = true;
             }
+            if(input !='±'){
             first = first + input;
             result.innerText = first;
-        } else{
+            isFirstChar = false;
+            }else if (!isFirstChar){
+                first *= -1;
+                result.innerText = first;
+            }
+            
+        } 
+        
+        else{
+            if(input !='±'){
             second = second + input;
             result.innerText = second;
             isSecondDone = true;
+            isFirstChar = false;
+            }else if (!isFirstChar){
+                second *= -1;
+                result.innerText = second;
+            }
         }
 
       });
@@ -125,7 +173,9 @@ function resetValues(){
     second = "";
     res= "";
     prevRes = "";
+    tempAction = false;
     isFirstDone = false;
+    isFirstChar = true;
     isSecondDone = false;
     result.innerText = "0";
     action = undefined;
