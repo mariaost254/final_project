@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+
+
 body {
     background-image: url(img/login_back.jpg);
     background-size:cover ;
@@ -10,15 +13,64 @@ body {
     font-size:1.3em;
     border-radius: 5px;
     display: inline-block;
-    padding: 10px 25px;
+    padding: 10px 30px;
     color: black;
     background-color: #FFFBFE;
     text-align: center;
     cursor: pointer;
     box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    font : normal 300 32px/1 'Josefin Sans', sans-serif;
   }
   
   .calc-text button:hover {
     background-color: #27B9B6;
     color: white;
   }
+
+
+.container {
+  display: grid;
+  grid-template-columns: 90px 90px 90px 90px;
+  grid-gap: 10px;
+}
+
+.button {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid lightgray;
+  height: 3em;
+  width: 3em;
+  border-radius: 0.5rem;
+  font : normal 300 32px/1 'Josefin Sans', sans-serif;
+  cursor: pointer;
+  transition: background-color 0.1s;
+  user-select: none;
+}
+
+.button:hover {
+  background-color: lightgray;
+}
+
+.button:active {
+  background-color: darkgray;
+  transform: scale(0.98);
+}
+
+.result {
+  border-radius: 0.5rem;
+  font-size: 30px;
+  border: 1px solid lightgray;
+  font : normal 300 32px/1 'Josefin Sans', sans-serif;
+  min-height: 1em;
+  max-height: 3em;
+  grid-column-start: 1;
+  grid-column-end: -2;
+  align-items: center;
+  flex-direction: row-reverse;
+  display: flex;
+  padding: 0.5em;
+  overflow: auto;
+}
+

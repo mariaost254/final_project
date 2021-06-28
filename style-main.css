@@ -1,6 +1,9 @@
-body{ 
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+html, body {
+   margin: 0;
+   padding: 0;
+   height: 100%;;
    font-family: Arial, sans-serif;
-   margin: 0%;
 }
 
 /*Main header*/
@@ -10,6 +13,10 @@ body{
     align-items: left;
     justify-content: left;
     margin-left: 10px;
+}
+
+#userHeader{ 
+  font : normal 300 20px/1 'Josefin Sans', sans-serif;
 }
 
 
