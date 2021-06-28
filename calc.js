@@ -11,16 +11,17 @@ let res="";
 let isFirstDone = false;
 let isSecondDone = false;
 let action;
-let isFirstClick = true;
-let prevRes = 0;
+let prevRes = "";
 
 
  function getResultOP (num1, num2){
+    num1 = parseInt(num1);
+    num2 = parseInt(num2);
      switch(action){
-         case '+': return num1 + num2;
-         case '-': return num1 + num2;
-         case '*': return num1 * num2;
-         case '/': return num1 / num2;
+         case '+': return (num1 + num2).toString();
+         case '-': return (num1 - num2).toString();
+         case '*': return (num1 * num2).toString();
+         case '/': return (num1 / num2).toString();
          default: return;
      }
 }
@@ -33,12 +34,7 @@ for ( let operation of operations){
     if (prevRes){ 
         isSecondDone = false;
         second = "";
-    }
-
-    if(isSecondDone && prevRes){
-        this.getResultOP(prevRes,second);
-        result.innerText = res;
-        prevRes = res;
+        isFirstDone = true;
     }
 
     if ( !isFirstDone ) { //go to second number
@@ -53,20 +49,16 @@ for ( let operation of operations){
   //After operation button was clicked -> handle second number
   for ( let number of numbers){
       number.addEventListener("click", (e) =>{
-
         let input = e.target.innerText;
         if(!isFirstDone){
-            if(isFirstClick ){
+            if(prevRes != ""){
               this.resetValues();
-              isFirstClick = false;
             }
             first = first + input;
             result.innerText = first;
-            first = parseInt(first);
         } else{
             second = second + input;
             result.innerText = second;
-            second = parseInt(second);
             isSecondDone = true;
         }
 
@@ -76,15 +68,17 @@ for ( let operation of operations){
 
 equal.addEventListener("click", () => {
 
-  if (isFirstDone && isSecondDone && !isFirstClick) { // calc result + in a case of click on number (without operator first) reset all
+  if (isFirstDone && isSecondDone && prevRes=="" ) { // calc result + in a case of click on number (without operator first) reset all
     res = getResultOP(first,second);
     result.innerText = res;
-    prevRes = res;
-    isFirstClick = true;
+    prevRes = res; 
+    isFirstDone = false;
   }else if (isSecondDone && prevRes){ //keep spamming the '=' sign -> will keep calculating 
     res = getResultOP(prevRes,second); 
     result.innerText = res;
     prevRes = res;
+    isFirstDone = false;
+
   }
 
 });
@@ -95,6 +89,7 @@ function resetValues(){
     first = "";
     second = "";
     res= "";
+    prevRes = "";
     isFirstDone = false;
     isSecondDone = false;
     result.innerText = "0";
