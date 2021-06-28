@@ -42,6 +42,16 @@ let arrRes = [];
             arrRes.push(num1.toString() + ' / ' + num2.toString()+ ' = ' + (num1 / num2).toString());
             return (num1 / num2).toString();
          }
+         case '^': 
+         {
+            arrRes.push(num1.toString() + ' ^ ' + num2.toString()+ ' = ' + (num1 ** num2).toString());
+            return (num1 ** num2).toString();
+         }
+         case '%': 
+         {
+            arrRes.push(num1.toString() + ' % ' + num2.toString()+ ' = ' + ((num1 * num2) / 100).toString());
+            return ((num1 * num2) / 100).toString();
+         }
          default: return;
      }
 }
