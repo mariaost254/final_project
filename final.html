@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/3195074dc8.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style-main.css">
     <link rel="stylesheet" href="style-final.css">
     <title>Document</title>
@@ -18,18 +19,22 @@
             <p id="userHeader" style="color:#808080;font-style:italic;">The unlimited calculation app</p>
         </div>
     </div>
- <div id='fin_clc' class="animate-in"> 
-          <p class="calcs">Here is yours calculation:
-     <br><br>
- <a class='hisuv'>12+12=24</a>
- <br><br>
- <a class='hisuv'>13+13=26</a>
- </p>
-</div> 
- </div>
- <button onclick="window.print();" class="print_me">
-    Print Me
-    </button>
+    <div id='fin_clc' class="animate-in container"> 
+       <h2 id="hTitle">History</h2>
+
+    </div>
+    <div class="calc-text">
+        <button class="print" value="final"><i class="fas fa-print"></i></button>
+    </div>
+
+
+
+        <h3>whatsapp send app </h3>
+<input id="number" type="numric" placeholder="phone 966506666666" >
+ <input id="name" type="text" placeholder="name" >
+ <input id="msg" type="text" placeholder="type msg" >
+<button onclick="send_handle()">send</button>
+
 <script type="text/javascript" src="main.js"></script>
 <script type="text/javascript" src="final.js"></script>
 </body>

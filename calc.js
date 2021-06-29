@@ -7,7 +7,6 @@ const nextpage = document.querySelector(".next");
 
 let first = "";
 let second = "";
-let prevSecond = "";
 let res="";
 let isFirstDone = false;
 let isSecondDone = false;
@@ -18,11 +17,12 @@ let arrRes = [];
 let tempAction = false;
 
 
+    //calc result and send it back to result mathod + save equation to an array (transfer to local storage)
+    //keep results as string in an array //+ ? with time stamp
  function getResultOP (num1, num2){
     num1 = parseInt(num1);
     num2 = parseInt(num2);
 
-    //keep results as string in an array //+ ? with time stamp
      switch(action){
          case '+': 
          {
@@ -88,7 +88,7 @@ nextpage.addEventListener("click", e =>{
     window.location.href='final.html';
 })
 
-
+//check which operation will be used listener
 for ( let operation of operations){
   operation.addEventListener("click", e => {
     if(action && e.target.innerText== '%'){ // for calculation such as 20 - %5
@@ -159,6 +159,7 @@ for ( let operation of operations){
       });
   }
 
+  //calculating result listener
 
 equal.addEventListener("click", () => {
   if (isFirstDone && isSecondDone && prevRes=="" ) { // calc result + in a case of click on number (without operator first) reset all
