@@ -27,33 +27,45 @@ let tempAction = false;
          case '+': 
          {
             if (tempAction){
+                let temp = num2;
                 num2 = (num1 * num2) / 100;
+                arrRes.push(num1.toString() + ' + ' + temp.toString()+ '% = ' + (num1 + num2).toString());
+            }else{
+                arrRes.push(num1.toString() + ' + ' + num2.toString()+ ' = ' + (num1 + num2).toString());
             }
-            arrRes.push(num1.toString() + ' + ' + num2.toString()+ ' = ' + (num1 + num2).toString());
             return (num1 + num2).toString();
          }
          case '-': 
          {
             if (tempAction){
+                let temp = num2;
                 num2 = (num1 * num2) / 100;
+                arrRes.push(num1.toString() + ' - ' + temp.toString()+ '% = ' + (num1 - num2).toString());
+            }else{
+                arrRes.push(num1.toString() + ' - ' + num2.toString()+ ' = ' + (num1 - num2).toString());
             }
-            arrRes.push(num1.toString() + ' - ' + num2.toString()+ ' = ' + (num1 - num2).toString());
             return (num1 - num2).toString();
          }
          case '*': 
          {
             if (tempAction){
+                let temp = num2;  
                 num2 = num2 /100;
+                arrRes.push(num1.toString() + ' * ' + temp.toString()+ '% = ' + (num1 * num2).toString());
+            }else{
+                arrRes.push(num1.toString() + ' * ' + num2.toString()+ ' = ' + (num1 * num2).toString());
             }
-            arrRes.push(num1.toString() + ' * ' + num2.toString()+ ' = ' + (num1 * num2).toString());
             return (num1 * num2).toString();
          }
          case '/': 
          {
             if (tempAction){
+                let temp = num2;
                 num2 = num2 /100;
+                arrRes.push(num1.toString() + ' / ' + temp.toString()+ '% = ' + (num1 / num2).toString());
+            }else{
+                arrRes.push(num1.toString() + ' / ' + num2.toString()+ ' = ' + (num1 / num2).toString());
             }
-            arrRes.push(num1.toString() + ' / ' + num2.toString()+ ' = ' + (num1 / num2).toString());
             return (num1 / num2).toString();
          }
          case '^': 
@@ -85,7 +97,6 @@ for ( let operation of operations){
     action = e.target.innerText;
     //keep on calculating previouse results with another number
     if((isFirstDone && isSecondDone && tempAction) || (prevRes && isSecondDone && tempAction)){// for continuous calculation (prev result..) such as 20 - %5
-        console.log("dfgdfg");
         action = tempAction;
         tempAction = true;
     }
@@ -95,7 +106,6 @@ for ( let operation of operations){
         second = "";
         isFirstDone = true;
         isFirstChar = true;
-        console.log("ad");
     }
 
     if ( !isFirstDone ) { //go to second number
