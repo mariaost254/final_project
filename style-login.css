@@ -1,52 +1,66 @@
 body {
-    margin: 0%;
-    background-image: url(img/login_back.jpg);
-    background-size:cover ;
-    background-repeat: no-repeat;
+  margin: 0%;
+  background-image: url(img/login_back.jpg);
+  background-size:cover ;
+  background-repeat: no-repeat;
 }
 
 .col1 {
-    width: 50%;
-    height: 100%;
-    
+  width: 50%;
+  height: 100%;
+  
 }
 
 .form {
-  margin: 0 auto;
-  width: 50%;
+margin: 0 auto;
+width: 80%;
 }
 
 .login {
-    height: 70vh;
-    width: 40%;
-    background-color: #4D9DE0;
-    padding: 2%;
-    margin: 0 auto;
-    margin-top: 12%;
-    border-radius: 8px;
+  width: 40%;
+  background-color: #4D9DE0;
+  padding: 2%;
+  margin: 0 auto;
+  margin-top: 12%;
+  border-radius: 8px;
 }
 
 .login-row {
-  margin: 0 auto;
-  padding: 0.2em;
+margin: 0 auto;
+padding: 0.2em;
 }
 
 h1 {
-  color: snow;
-  font-size: 4em;
-  text-align: center;
+color: snow;
+font-size: 3vw;
+text-align: center;
+
 }
 
-/* .animate-in {
-    animation: fadeIn .5s ease-in;
-  }
-  
-  .animate-out {
-    transition: opacity .5s;
-    opacity: 0;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  } */
+.animate-in {
+  animation: fadeIn .5s ease-in;
+}
+
+.animate-out {
+  transition: opacity .5s;
+  opacity: 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.login-row > img {
+  width: 100%;
+}
+
+form > input {
+  text-align: left;
+  font-size: 2vw;
+  width: 100%;
+ }
+
+ #btn {
+   text-align: center;
+ }

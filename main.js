@@ -19,3 +19,20 @@ function relogin() {
 }
 
 
+//pull and store the name and email from login page
+// array to store all users as objects
+/*let users = [];
+
+// function to take the username and his email as an object and push it to the array of users
+const addUser = (ev) => {
+  let user = {
+    id: Date.now(),
+    name: document.getElementById('fullname').value,
+    email: document.getElementById('email').value
+  }
+  users.push(user);
+}
+
+
+document.getElementById('btn').addEventListener('click', addUser);*/
+
