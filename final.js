@@ -1,5 +1,8 @@
 let historyBox =  document.querySelector("#fin_clc");
 let printBtn =  document.querySelector(".print");
+let back =  document.querySelector("#back");
+let clear =  document.querySelector("#clear");
+
 let retrievedObject ="";
 
 window.onload = function(){
@@ -14,12 +17,14 @@ window.onload = function(){
   }
 
   function fillHistory (){
-    //add date
+    if(retrievedObject!=null){
     retrievedObject.forEach((obj) => {
       let calc = document.createElement('p');
       calc.innerHTML = obj.toString();
       historyBox.appendChild(calc);
-  });
+    }
+  );
+    }
   }
 
   printBtn.addEventListener('click', event =>{
@@ -30,6 +35,14 @@ window.onload = function(){
     document.body.innerHTML = originalContents;
   })
 
+  back.addEventListener('click', event =>{
+    window.location.href='calc.html';
+  })
+
+  clear.addEventListener('click', event =>{
+    localStorage.clear();
+    location.reload(historyBox);
+  })
 
 
 
