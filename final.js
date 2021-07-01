@@ -18,14 +18,15 @@ window.onload = function(){
 
   function fillHistory (){
     if(retrievedObject!=null){
-    retrievedObject.forEach((obj) => {
+    for(let i=retrievedObject.length-1; i>=0 ; i--) {
       let calc = document.createElement('p');
-      calc.innerHTML = obj.toString();
+      calc.innerHTML = retrievedObject[i].toString();
       historyBox.appendChild(calc);
     }
-  );
-    }
   }
+}
+
+  
 
   printBtn.addEventListener('click', event =>{
     let printContents = document.getElementById('fin_clc').innerHTML;
@@ -33,6 +34,7 @@ window.onload = function(){
     document.body.innerHTML = printContents;
     window.print();
     document.body.innerHTML = originalContents;
+    location.reload();
   })
 
   back.addEventListener('click', event =>{

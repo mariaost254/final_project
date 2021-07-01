@@ -85,10 +85,10 @@ let tempAction = false;
 //take the array to the local storage -> will be used in next page 
 nextpage.addEventListener("click", e =>{
     if(localStorage.getItem('arrRes') != null){
-        console.log("dfgd");
         retrievedObject = localStorage.getItem('arrRes');
         retrievedObject=JSON.parse(retrievedObject);
         arrRes.push.apply(arrRes,retrievedObject);
+        arrRes.reverse();
     }
     localStorage.setItem('arrRes', JSON.stringify(arrRes));
     window.location.href='final.html';
