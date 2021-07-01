@@ -3,9 +3,11 @@ window.addEventListener("beforeunload", function () {
     document.body.classList.add("animate-out");
   });
 
+
 //email and user registered from login page/link pop up 
 let email = "a@a.com";
 let user = "Temp User";
+
 
 //executes on calc page load
 function initUser() { //or welcome and logout?
@@ -35,4 +37,10 @@ const addUser = (ev) => {
 
 
 document.getElementById('btn').addEventListener('click', addUser);*/
+
+
+// let elmt1 = document.getElementById("exp");
+// let params = window.location.search;
+// let par = new URLSearchParams(params);
+// elmt1.innerHTML = par.get('lname');
 
