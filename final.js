@@ -5,6 +5,13 @@ let clear =  document.querySelector("#clear");
 
 let retrievedObject ="";
 
+//===for shre popup
+let closePopup = document.querySelector("#popupclose");
+let overlay = document.querySelector("#overlay");
+let popup = document.querySelector("#popup");
+let shareBtnw = document.querySelector("#whatsapp");
+let shareBtne = document.querySelector("#email");
+
 window.onload = function(){
     initUser();
     retrieveData ();
@@ -27,7 +34,6 @@ window.onload = function(){
 }
 
   
-
   printBtn.addEventListener('click', event =>{
     let printContents = document.getElementById('fin_clc').innerHTML;
     let originalContents = document.body.innerHTML;
@@ -46,9 +52,27 @@ window.onload = function(){
     location.reload(historyBox);
   })
 
+//close pop up vis button or click on darken screen
+closePopup.addEventListener('click', event =>{
+  overlay.style.display = 'none';
+  popup.className = ''; 
+})
 
+overlay.addEventListener('click', event =>{
+  overlay.style.display = 'none';
+  popup.className = ''; 
+})
+//share via whatsapp
+shareBtnw.addEventListener('click', event =>{
+  overlay.style.display = 'block';
+  popup.className = 'show';
+})
 
-
+//share via email
+shareBtne.addEventListener('click', event =>{
+  overlay.style.display = 'block';
+  popup.className = 'show';
+})
 
 
 
