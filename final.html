@@ -44,7 +44,23 @@
             <span id="popupclose"><i class="fas fa-times"></i></span>
         </div>
         <div class="popupcontent">
-            <h1>Some Popup Content</h1>
+            <h1 class="share-title">Challenge your friends!</h1>
+            <p class="share-text" >Send them an equation</p> 
+            <input class="share-input" placeholder="Enter first number" id="n1" type="number" />
+            <select class="share-text" id="dropdown">
+                <option value="+" class="option">+</option>
+                <option value="-" class="option">-</option>
+                <option value="/" class="option">/</option>
+                <option value="*" class="option">*</option>
+                <option value="%" class="option">%</option>
+                <option value="^" class="option">^</option>
+              </select>
+            <input class="share-input" placeholder="Enter second number" id="n2" type="number" />
+            <p class="share-text" >And let them check their answer</p>  
+            <div class="calc-text">
+                <button id="sharewhatsapp" class="s-btn" value="share">Share <i class="fab fa-whatsapp"></i></button>
+                <button id="shareemail" class="s-btn" value="share">Share <i class="fas fa-at"></i></button>
+            </div>
         </div>
     </div>
 <script type="text/javascript" src="main.js"></script>

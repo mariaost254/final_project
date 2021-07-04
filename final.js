@@ -11,6 +11,12 @@ let overlay = document.querySelector("#overlay");
 let popup = document.querySelector("#popup");
 let shareBtnw = document.querySelector("#whatsapp");
 let shareBtne = document.querySelector("#email");
+let sendWhatsapp = document.querySelector("#sharewhatsapp");
+let sendEmail = document.querySelector("#shareemail");
+let n1 = document.querySelector("#n1");
+let op = document.querySelector("#dropdown");
+let n2 = document.querySelector("#n2");
+
 
 window.onload = function(){
     initUser();
@@ -56,27 +62,51 @@ window.onload = function(){
 closePopup.addEventListener('click', event =>{
   overlay.style.display = 'none';
   popup.className = ''; 
+  sendWhatsapp.style.display = 'none';
+  sendEmail.style.display = 'none';
 })
 
 overlay.addEventListener('click', event =>{
   overlay.style.display = 'none';
   popup.className = ''; 
+  sendWhatsapp.style.display = 'none';
+  sendEmail.style.display = 'none';
 })
 //share via whatsapp
 shareBtnw.addEventListener('click', event =>{
+  sendWhatsapp.style.display = '';
+  sendEmail.style.display = 'none';
   overlay.style.display = 'block';
   popup.className = 'show';
 })
 
 //share via email
 shareBtne.addEventListener('click', event =>{
+  sendEmail.style.display = '';
+  sendWhatsapp.style.display = 'none';
   overlay.style.display = 'block';
   popup.className = 'show';
 })
 
+function testValues(){
 
+}
 
+sendEmail.addEventListener('click', event =>{
+  //test values no to be null first
+  // let url = new URL('httphttp%3A%2F%2Flocalhost:8000%final.html');
+  //write down the equation in the text message also 
+  let num1= n1.value;
+  let num2 = n2.value;
+  let oper = op.options[op.selectedIndex].text;
+  let str = num1 + " " + oper + " " + num2+" ";
+  window.open("mailto:mariaost253@gmail.com?subject=Solve The Equation&body=Solve: "+str+ 
+  "%0AClick on the link to get your answer http%3A%2F%2Flocalhost%3A8000%2Ffinal.html%3Fn1%3D"+num1+"%26n2%3D"+num2+"%26op%3D"+oper+"");
+  //change value to sending or sent
+});
 
+sendWhatsapp.addEventListener('click', event =>{
+});
 
 
 

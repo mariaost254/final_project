@@ -145,4 +145,61 @@ body {
     top: 50%; /*slide it down smoothly*/
     transform: scale(1);
   }
+  .share-title {
+    padding: 10px;
+    color: black;
+    font : normal 300 48px/1 'Josefin Sans', sans-serif;
+    text-align: center;
+  }
+  
+  .share-text {
+    color: #27B9B6;
+    font : normal 300 28px/1 'Josefin Sans', sans-serif;
+    text-align: center;
+  }
 
+  .share-input{
+   color: black;
+   font : normal 300 24px/1 'Josefin Sans', sans-serif;
+   text-align: right;
+   overflow-y: auto;
+   width: 50%;
+   border: 0;
+   border-bottom: 2px solid black;
+   outline: 0;
+   padding: 7px 0;
+   transition: border-color 0.2s;
+   margin-left: 2%;
+  }
+
+  
+  .share-input::placeholder{
+    text-align: left;
+    font : normal 300 18px/1 'Josefin Sans', sans-serif;
+  }
+
+  .option{
+    text-align: center;
+    font : normal 300 18px/1 'Josefin Sans', sans-serif;
+    padding : 5px;
+   }
+
+   #dropdown{ 
+    border: 0;
+    border-bottom: 2px solid black;
+    outline: 0;
+    padding: 5px 0;
+    transition: border-color 0.2s;
+   }
+
+  #sharewhatsapp{ 
+    margin: auto auto auto 6%;
+  }
+
+  #shareemail{ 
+    margin: auto auto auto 6%;
+  }
+
+  .s-btn{
+      display: none;
+  }

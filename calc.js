@@ -16,6 +16,8 @@ let isFirstChar = true;
 let arrRes = [];
 let tempAction = false;
 
+//check page load if url contains other params n1 n2 options
+//if true open log in pop up and show result 
 
     //calc result and send it back to result mathod + save equation to an array (transfer to local storage)
     //keep results as string in an array //+ ? with time stamp
