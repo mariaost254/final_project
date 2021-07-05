@@ -6,20 +6,6 @@ body {
     background-size:cover ;
 }
   
-/* .calcs{
-    font-size: 20px;   
-    background-color: #4d9de0;   
-    margin-left: 20px;
-    margin-top: 20px;
-    height: 450px;
-    width: 250px;
-    padding-left: 100px;
-    display: inline-block
-}
-.hisuv{
-    padding-left: 50px;
-} */
-
 #hTitle{ 
     font : normal 300 32px/1 'Josefin Sans', sans-serif;
     color : #fff;
@@ -154,7 +140,7 @@ body {
   
   .share-text {
     color: #27B9B6;
-    font : normal 300 28px/1 'Josefin Sans', sans-serif;
+    font : normal 300 28px/0.8 'Josefin Sans', sans-serif;
     text-align: center;
   }
 
@@ -168,7 +154,6 @@ body {
    border-bottom: 2px solid black;
    outline: 0;
    padding: 7px 0;
-   transition: border-color 0.2s;
    margin-left: 2%;
   }
 
@@ -189,17 +174,34 @@ body {
     border-bottom: 2px solid black;
     outline: 0;
     padding: 5px 0;
-    transition: border-color 0.2s;
    }
 
   #sharewhatsapp{ 
-    margin: auto auto auto 6%;
+   display: inline-block;
+    margin: 3% auto auto 6%;
   }
 
+  #sharewhatsapp:hover{
+    background-color: #25D366;
+  } 
+
+  #shareemail:hover{
+    background-color: #C71610;
+  } 
+
   #shareemail{ 
-    margin: auto auto auto 6%;
+    display: inline-block;
+    margin: 3% auto auto 6%;
   }
 
   .s-btn{
       display: none;
+  }
+
+  #lbl{
+    font : normal 300 18px/0 'Josefin Sans', sans-serif;
+    color:red;
+    text-align: center;
+    margin-left:25%;
+    display: none;
   }

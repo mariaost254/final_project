@@ -91,3 +91,101 @@ body {
   overflow: auto;
 }
 
+
+#overlay {
+  display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-image: url(img/login_back.jpg);
+}
+
+#popup {
+  position: absolute;
+  left: 50%;
+  background: #fff;
+  width: 500px;
+  height: 400px;
+  margin-left: -250px; 
+  margin-top: -250px; /*Half the value of height to center div*/
+  top: -50%; /*Put it on the very top*/
+  transition: all .3s ease-in-out; /*make it smooth*/
+  transform: scale(0);
+  visibility: hidden;
+  opacity: 0;
+  z-index: -1; /*hide it in the back of the page*/
+  border-radius: 5px;
+}
+
+.popupcontent {
+  padding: 20px;
+}
+
+#popup.show {
+  visibility: visible;
+  z-index: 200;
+  opacity: 1;
+  top: 50%; 
+  transform: scale(1);
+}
+.share-title {
+  padding: 10px;
+  color: black;
+  font : normal 300 48px/1 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+.share-text {
+  color: #27B9B6;
+  font : normal 300 28px/0.8 'Josefin Sans', sans-serif;
+  text-align: center;
+}
+
+.share-input{
+ color: black;
+ font : normal 300 24px/1 'Josefin Sans', sans-serif;
+ text-align: left;
+ overflow-y: auto;
+ width: 80%;
+ border: 0;
+ border-bottom: 2px solid black;
+ outline: 0;
+ padding: 7px 0;
+ margin-left: 2%;
+ margin-bottom: 2%;
+ background-color: transparent;
+}
+
+.share-input::placeholder{
+  font : normal 300 18px/1 'Josefin Sans', sans-serif;
+}
+
+
+#btn{
+  margin-top: 1%;
+  border: none;
+  outline: 0;
+  font-size:1.3em;
+  border-radius: 5px;
+  width:100%;
+  display: inline-block;
+  padding: 10px 153px;
+  margin: 4% auto auto auto;
+  color: black;
+  background-color: #FFFBFE;
+  text-align: center;
+  cursor: pointer;
+  box-shadow:0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  font : normal 300 32px/1 'Josefin Sans', sans-serif;
+}
+
+#btn:hover {
+  background-color: #27B9B6;
+  color: white;
+}
+
+

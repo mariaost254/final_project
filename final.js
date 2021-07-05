@@ -16,12 +16,23 @@ let sendEmail = document.querySelector("#shareemail");
 let n1 = document.querySelector("#n1");
 let op = document.querySelector("#dropdown");
 let n2 = document.querySelector("#n2");
+let label = document.querySelector("#lbl");
 
 
 window.onload = function(){
-    initUser();
-    retrieveData ();
-    fillHistory();
+  let params = window.location.search;
+  let par = new URLSearchParams(params);
+  initUser(par.get('fullname'), par.get('email'));
+  retrieveData ();
+  fillHistory();
+}
+
+window.onback = function(){
+  let params = window.location.search;
+  let par = new URLSearchParams(params);
+  let finalurl = 'calc.html';
+  finalurl= finalurl.concat("\?fullname="+par.get('fullname')+"&email="+par.get('email'));
+  window.location.href=finalurl;
 }
 
   function retrieveData (){
@@ -50,7 +61,11 @@ window.onload = function(){
   })
 
   back.addEventListener('click', event =>{
-    window.location.href='calc.html';
+    let params = window.location.search;
+    let par = new URLSearchParams(params);
+    let finalurl = 'calc.html';
+    finalurl= finalurl.concat("\?fullname="+par.get('fullname')+"&email="+par.get('email'));
+    window.location.href=finalurl;
   })
 
   clear.addEventListener('click', event =>{
@@ -59,19 +74,23 @@ window.onload = function(){
   })
 
 //close pop up vis button or click on darken screen
-closePopup.addEventListener('click', event =>{
+function closepopUp(){
   overlay.style.display = 'none';
   popup.className = ''; 
   sendWhatsapp.style.display = 'none';
   sendEmail.style.display = 'none';
+  label.style.display = 'none';
+  n1.value ='';
+  n2.value ='';
+}
+closePopup.addEventListener('click', event =>{
+ this.closepopUp();
 })
 
 overlay.addEventListener('click', event =>{
-  overlay.style.display = 'none';
-  popup.className = ''; 
-  sendWhatsapp.style.display = 'none';
-  sendEmail.style.display = 'none';
+  this.closepopUp();
 })
+
 //share via whatsapp
 shareBtnw.addEventListener('click', event =>{
   sendWhatsapp.style.display = '';
@@ -89,40 +108,43 @@ shareBtne.addEventListener('click', event =>{
 })
 
 function testValues(){
-
+  if(n2.value=='' || n1.value==''){
+    label.style.display = 'flex';
+    return false;
+  }
+  return true;
 }
 
+n1.addEventListener('click', event =>{
+  if(n1.value == '' && label.style.display == 'flex')
+      label.style.display = 'none';
+})
+
+n2.addEventListener('click', event =>{
+  if(n2.value == '' && label.style.display == 'flex'){
+      label.style.display = 'none';
+  }
+})
+
 sendEmail.addEventListener('click', event =>{
-  //test values no to be null first
-  // let url = new URL('httphttp%3A%2F%2Flocalhost:8000%final.html');
-  //write down the equation in the text message also 
   let num1= n1.value;
   let num2 = n2.value;
-  let oper = op.options[op.selectedIndex].text;
+  let oper = op.options[op.selectedIndex].value;
   let str = num1 + " " + oper + " " + num2+" ";
-  window.open("mailto:mariaost253@gmail.com?subject=Solve The Equation&body=Solve: "+str+ 
-  "%0AClick on the link to get your answer http%3A%2F%2Flocalhost%3A8000%2Ffinal.html%3Fn1%3D"+num1+"%26n2%3D"+num2+"%26op%3D"+oper+"");
-  //change value to sending or sent
+  if(testValues()){
+      window.open("mailto:?subject=Solve The Equation&body=Solve: "+str+ 
+      "%0AClick on the link to get your answer http%3A%2F%2Flocalhost%3A8000%2Fcalc.html%3Fn1%3D"+num1+"%26n2%3D"+num2+"%26op%3D"+oper+"");
+  }
 });
 
 sendWhatsapp.addEventListener('click', event =>{
-});
-
-
-
-
-
-
-  //https://api.whatsapp.com/send?phone=+972num&text=urlencodedtext
-
-  function send_handle(){
-
-    let num=document.getElementById("number").value;
-  
-    let msg= document.getElementById("msg").value;
-  
-      let name= document.getElementById("name").value;
-    
-    var win = window.open(`https://api.whatsapp.com/send?phone=${num}&text=text`, '_blank');
-   // win.focus();
+  let num1= n1.value;
+  let num2 = n2.value;
+  let oper = op.options[op.selectedIndex].value;
+  if(oper == '+') oper = '%2B';
+  let str = "Solve The Equation "+ num1 + " "+ oper +" "+ num2+ "%0ACopy the link to get your answer %0A";
+  let link = `http%3A%2F%2Flocalhost%3A8000%2Fcalc.html%3Fn1%3D${num1}%26n2%3D${num2}%26op%3D${oper}`;
+  if(testValues()){
+    window.open(`https://web.whatsapp.com/send?text=${str}${link}`);
   }
+});

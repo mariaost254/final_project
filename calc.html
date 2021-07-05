@@ -9,7 +9,7 @@
    
     <title>Hishuv</title>
 </head>
-<body onload="initUser()">
+<body>
     <div>
         <div class="sticky">
             <div class="welcome-header">
@@ -47,6 +47,19 @@
                 <button class="next" value="final">History of calculations</button>
             </div>
         </div> 
+    </div>
+
+    <div id="overlay"></div>
+    <div id="popup">
+        <div class="popupcontent">
+            <h1 class="share-title">Welcome</h1>
+            <p class="share-text" >Please enter username and email</p> 
+            <form action="javascript:handleIt()" >
+                <input class="share-input" name="fullname" placeholder="Example" id="usernameext" type="text" required/>
+                <input class="share-input" name="email" placeholder="example@example.com" id="emailext" type="email" required/>
+                <input type="submit" value="Login" id="btn"><br>
+            </form>
+        </div>
     </div>
     <script type="text/javascript" src="main.js"></script>
     <script type="text/javascript" src="calc.js"></script>

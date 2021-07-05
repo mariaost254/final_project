@@ -16,11 +16,29 @@ let isFirstChar = true;
 let arrRes = [];
 let tempAction = false;
 
-//check page load if url contains other params n1 n2 options
-//if true open log in pop up and show result 
+let userExternal = document.querySelector("#usernameext");
+let emailExternal = document.querySelector("#emailext");
+//===for shre popup
+let overlay = document.querySelector("#overlay");
+let popup = document.querySelector("#popup");
+let params = window.location.search;
+let par = new URLSearchParams(params);
 
-    //calc result and send it back to result mathod + save equation to an array (transfer to local storage)
-    //keep results as string in an array //+ ? with time stamp
+window.onload = function(){
+    if( !par.has('fullname') && !par.has('email')){
+        isExternal();
+    }else{
+       initUser(par.get('fullname'), par.get('email'));
+    }
+}
+
+function isExternal(){
+    overlay.style.display = 'block';
+    popup.className = 'show';
+
+}
+
+
  function getResultOP (num1, num2){
     num1 = parseInt(num1);
     num2 = parseInt(num2);
@@ -93,7 +111,13 @@ nextpage.addEventListener("click", e =>{
         arrRes.reverse();
     }
     localStorage.setItem('arrRes', JSON.stringify(arrRes));
-    window.location.href='final.html';
+    let params = window.location.search;
+    let finalurl = 'final.html';
+    if(userExternal.value != ''){
+       finalurl= finalurl.concat("\?fullname="+userExternal.value+"&email="+emailExternal.value);
+    }else
+       finalurl= finalurl.concat(params);
+    window.location.href=finalurl;
 })
 
 //check which operation will be used listener
@@ -168,21 +192,22 @@ for ( let operation of operations){
   }
 
   //calculating result listener
-
+function getResult(){
+    if (isFirstDone && isSecondDone && prevRes=="" ) { // calc result + in a case of click on number (without operator first) reset all
+        res = getResultOP(first,second);
+        result.innerText = res;
+        prevRes = res; 
+        isFirstDone = false;
+      }else if (isSecondDone && prevRes){ //keep spamming the '=' sign -> will keep calculating 
+        res = getResultOP(prevRes,second); 
+        result.innerText = res;
+        prevRes = res;
+        isFirstDone = false;
+      }
+    
+}
 equal.addEventListener("click", () => {
-  if (isFirstDone && isSecondDone && prevRes=="" ) { // calc result + in a case of click on number (without operator first) reset all
-    res = getResultOP(first,second);
-    result.innerText = res;
-    prevRes = res; 
-    isFirstDone = false;
-  }else if (isSecondDone && prevRes){ //keep spamming the '=' sign -> will keep calculating 
-    res = getResultOP(prevRes,second); 
-    result.innerText = res;
-    prevRes = res;
-    isFirstDone = false;
-  }
-
-
+    getResult();
 });
 
 //reset methods
@@ -204,3 +229,19 @@ function resetValues(){
 reset.addEventListener("click", () => {
     this.resetValues();
 });
+
+
+//login from share link popup handling
+function handleIt(){
+    par.append('fullname',userExternal.value);
+    par.append('email',emailExternal.value);
+    initUser(par.get('fullname'), par.get('email'));
+    overlay.style.display = 'none';
+    popup.className = ''; 
+    isFirstDone = true;
+    isSecondDone = true;
+    action= par.get('op');
+    first = par.get('n1');
+    second = par.get('n2');
+    getResult();
+}
