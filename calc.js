@@ -240,7 +240,7 @@ function handleIt(){
     popup.className = ''; 
     isFirstDone = true;
     isSecondDone = true;
-    action= par.get('op');
+    action= par.get('op')==""? '+':par.get('op');
     first = par.get('n1');
     second = par.get('n2');
     getResult();

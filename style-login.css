@@ -1,5 +1,4 @@
 body {
-  margin: 0%;
   background-image: url(img/login_back.jpg);
   background-size:cover ;
   background-repeat: no-repeat;
@@ -34,22 +33,28 @@ h1 {
 color: snow;
 font-size: 3vw;
 text-align: center;
-
+font : normal 300 48px/1 'Josefin Sans', sans-serif;
 }
 
-.animate-in {
-  animation: fadeIn .5s ease-in;
-}
+input{
+  color: black;
+  font : normal 300 22px/1 'Josefin Sans', sans-serif;
+  text-align: right;
+  overflow-y: auto;
+  width: 50%;
+  border: 0;
+  border-bottom: 2px solid black;
+  outline: 0;
+  padding: 7px 0;
+  margin-left: 2%;
+ }
 
-.animate-out {
-  transition: opacity .5s;
-  opacity: 0;
-}
+ 
+input::placeholder{
+   text-align: left;
+   font : normal 300 20px/1 'Josefin Sans', sans-serif;
+ }
 
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
 
 .login-row > img {
   width: 100%;
@@ -57,7 +62,6 @@ text-align: center;
 
 form > input {
   text-align: left;
-  font-size: 2vw;
   width: 100%;
  }
 
