@@ -8,8 +8,23 @@
     <title>Welcome To Hishuv</title>
     <link rel="stylesheet" href="style-main.css">
     <link rel="stylesheet" href="style-login.css">
+    <script type = "text/javascript" >
+            function preventBack(){
+                window.addEventListener("beforeunload", function () {
+               let bdy = document.querySelector(".animate-in");
+                bdy.className = '';
+                bdy.style.display = 'none';
+      });
+                window.history.forward();
+                window.onbeforeunload = function () {null; }
+                window.beforeunload=function(){null}; 
+             }
+             setTimeout("preventBack()", 0);
+             window.onunload=function(){null}; 
+
+         </script>
 </head>
-<body class="animate-in">
+<body class="animate-in"> 
     <main class="login_main">
         <div class="col1">
             <div class="login">
@@ -24,8 +39,6 @@
                         </form>
                     </div>
                 </div>
-                
-                
             </div>
         </div>
     </main>

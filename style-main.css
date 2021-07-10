@@ -6,10 +6,8 @@ html, body {
    font-family: Arial, sans-serif;
 }
 
-/*Main header*/
 .welcome-header{
-    /* height: 70%; */
-    display: inline-block; /*flex center center*/
+    display: inline-block; 
     align-items: left;
     justify-content: left;
     margin-left: 10px;
